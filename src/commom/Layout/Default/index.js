@@ -1,21 +1,18 @@
 import { withStyles } from "@material-ui/core";
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import DashBoard from "../../../components/DashBoard";
 import styles from "./styles";
 
-class AdminLayout extends Component {
+class DefaultLayout extends Component {
   render() {
-    const {  path, component: AdminComponent, exact , name } = this.props;
+    const {  path, component: DefaultComponent, exact } = this.props;
     return (
       <Route
         path={path}
         exact={exact}
         render ={ routeProps => {
           return (
-            <DashBoard name={name}>
-              <AdminComponent {...routeProps} />
-            </DashBoard>
+              <DefaultComponent {...routeProps} />
           );
         }}
       ></Route>
@@ -23,4 +20,4 @@ class AdminLayout extends Component {
   }
 }
 
-export default withStyles(styles)(AdminLayout);
+export default withStyles(styles)(DefaultLayout);

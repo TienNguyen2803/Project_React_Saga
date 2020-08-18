@@ -9,8 +9,6 @@ export const getListTask = (param = {}) => {
   if (Object.keys(param).length > 0) {
     queryString = `?${qs.stringify(param)}`;
   }
-
-  console.log(`${API_ENDPOINT}/${url}${queryString}`);
   return ApiService.get(`${API_ENDPOINT}/${url}${queryString}`);
 };
 

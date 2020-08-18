@@ -1,6 +1,7 @@
 import AdminHomePage from '../containers/AdminHomePage';
 import TaskBorad from '../containers/TaskBorad';
-
+import LoginPage from '../containers/LoginPage';
+import SignUpPage from '../containers/SignUpPage';
 
 export const API_ENDPOINT= "http://localhost:9999";
 export const STATUS = [
@@ -21,14 +22,29 @@ export const STATUS = [
 export const ADMIN_ROUTES = [
   {
     name :"Trang Admin",
-    path:"/",
+    path:"/admin",
     exact:true,
     component: AdminHomePage
   },
   {
     name : "Trang quản lý Task",
-    path : "/task-board",
+    path : "/admin/task-board",
     exact :false,
     component : TaskBorad
+  }
+]
+
+export const DEFAULT_ROUTES = [
+  {
+    name :"Login",
+    path:"/login",
+    exact:true,
+    component: LoginPage
+  },
+  {
+    name :"SignUp",
+    path:"/signup",
+    exact:true,
+    component: SignUpPage
   }
 ]
